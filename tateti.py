@@ -10,6 +10,9 @@ class Tateti:
         self.ganador = None
 
     def ocupar_una_de_las_casillas(self, fil, col):
+        if self.ganador or self.tablero.esta_lleno():
+            return
+        
         self.tablero.poner_la_ficha(fil, col, self.turno.obtener_ficha())
 
         
